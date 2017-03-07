@@ -44,17 +44,23 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var _insect = __webpack_require__(1);
 
 	var _insect2 = _interopRequireDefault(_insect);
+
+	var _person = __webpack_require__(3);
+
+	var _person2 = _interopRequireDefault(_person);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var spider = new _insect2.default("Spider");
 	spider.legsCount = 8;
 	spider.doSomething();
+
+	var model = new _person2.default.Person('Es de una clase');
 
 /***/ },
 /* 1 */
@@ -144,6 +150,42 @@
 	}();
 
 	module.exports = Animal;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Person = function () {
+	    function Person(name) {
+	        _classCallCheck(this, Person);
+
+	        this.name = name;
+	    }
+
+	    _createClass(Person, [{
+	        key: 'sayhello',
+	        value: function sayhello() {
+	            console.log('Hi my name is ' + this.name);
+	        }
+	    }]);
+
+	    return Person;
+	}();
+
+	var notClass = function notClass() {
+	    console.log('Im not a Class');
+	};
+
+	module.exports = {
+	    Person: Person,
+	    Metodo: notClass
+	};
 
 /***/ }
 /******/ ]);
